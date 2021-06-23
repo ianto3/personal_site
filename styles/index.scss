@@ -1,3 +1,5 @@
+@import "variables";
+
 
 // Global
 
@@ -11,7 +13,7 @@
 }
 
 body{
-    background-color: rgb(245, 245, 245);
+    background-color: $not-so-white;
 }
 
 h1{
@@ -22,6 +24,11 @@ h1{
 h2{
     font-size: 44px;
     letter-spacing: 3px;
+}
+
+h3{
+    font-size: 35px;
+    letter-spacing: 2px;
 }
 
 p{
@@ -44,7 +51,7 @@ nav {
 
     a{
         position: relative;
-        color: rgb(245, 245, 245);
+        color: $not-so-white;
         text-decoration: none;
         font-size: 24px;
         font-weight: 600;
@@ -53,18 +60,18 @@ nav {
             position: absolute;
             content: "";
             bottom: -5px;
-            left: 0;
+            left: 0%;
             height: 2px;
-            background-color: rgb(245, 245, 245);
+            background-color: $not-so-white;
             border-radius: 5px;
             width: 0%;
-            transition: all 0.5s ease-in-out;
+            transition: all 0.2s ease-in-out;
             
         }
 
         &:hover{
             &::after{
-                width:100%;
+                width: 100%;
             }
         }
     }
@@ -83,7 +90,7 @@ header {
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% 100%;
-    color: rgb(245, 245, 245);
+    color: $not-so-white;
 
     .header-title {
         text-align: center;
@@ -110,42 +117,83 @@ header {
     align-items: center;
     text-align: justify;
 
-    img{
-        width: 20%;
-        transform: rotate(90deg);
+    & *{
+        margin: 40px 0;
     }
 
     h2{
         margin: 40px 0;
         display: inline-block;
-        background-color: #0085dd; // fallback
-        background-image: linear-gradient(45deg, #0055FF, 20%, #00D4FF);
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        -moz-background-clip: text;
-        -moz-text-fill-color: transparent;
+        // background-color: #0085dd; // fallback
+        // background-image: linear-gradient(45deg, $dark-blue, 20%, $light-blue);
+        // background-size: 100%;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent; 
+        // -moz-background-clip: text;
+        // -moz-text-fill-color: transparent;
+        color: $not-so-black;
     }
 
-    p{
-        color:rgb(75, 75, 75);
-        letter-spacing: 1px;
+    .about-article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        img {
-            float: left;
+        #dna {
             transform: rotate(45deg);
             margin: 0 20px 20px 0;
-            width: 30%;
+            width: 150px;
         }
+
+        p{
+            color:$not-so-black;
+            letter-spacing: 1px;
+        }
+
+        @media screen and (min-width: $md) {
+            display: initial;
+
+            #dna{
+                float: left;
+                shape-outside: circle(50%);
+                margin: 2rem;
+                width: 250px;
+            }
+        }
+
+        // @media screen and (min-width: $lg){
+        //     display: flex;
+        //     flex-direction: row;
+
+        //     img{
+        //         float: none;
+        //     }
+
+        // }
     }
 
-    .circle-about{
-        padding: 20%;
-        padding: 10%;
-        background:#00D4FF;
-        background-image: linear-gradient(45deg, #0055FF, 20%, #00D4FF);
-        border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+    .skills-container{
+        width: 100vw;
+        background: linear-gradient(45deg, $dark-blue, 20%, $light-blue);
+
+        .container{
+            margin: auto;
+            padding: 25px;
+
+            h3{
+                display: inline-block;
+                margin: auto;
+                color: $not-so-white;
+            }
+
+            & img {
+                width: 50px;
+            }
+        }
+
+        
     }
+
     
 }
 

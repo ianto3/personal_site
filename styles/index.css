@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: #fafafa;
 }
 
 h1 {
@@ -19,6 +19,11 @@ h1 {
 h2 {
   font-size: 44px;
   letter-spacing: 3px;
+}
+
+h3 {
+  font-size: 35px;
+  letter-spacing: 2px;
 }
 
 p {
@@ -39,7 +44,7 @@ nav {
 }
 nav a {
   position: relative;
-  color: whitesmoke;
+  color: #fafafa;
   text-decoration: none;
   font-size: 24px;
   font-weight: 600;
@@ -48,12 +53,12 @@ nav a::after {
   position: absolute;
   content: "";
   bottom: -5px;
-  left: 0;
+  left: 0%;
   height: 2px;
-  background-color: whitesmoke;
+  background-color: #fafafa;
   border-radius: 5px;
   width: 0%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 nav a:hover::after {
   width: 100%;
@@ -69,7 +74,7 @@ header {
   background-repeat: no-repeat;
   background-position-y: top;
   background-size: 100% 100%;
-  color: whitesmoke;
+  color: #fafafa;
 }
 header .header-title {
   text-align: center;
@@ -90,37 +95,54 @@ header .header-title .position-title {
   align-items: center;
   text-align: justify;
 }
-#about img {
-  width: 20%;
-  transform: rotate(90deg);
+#about * {
+  margin: 40px 0;
 }
 #about h2 {
   margin: 40px 0;
   display: inline-block;
-  background-color: #0085dd;
-  background-image: linear-gradient(45deg, #0055FF, 20%, #00D4FF);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  color: #4b4b4b;
 }
-#about p {
+#about .about-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#about .about-article #dna {
+  transform: rotate(45deg);
+  margin: 0 20px 20px 0;
+  width: 150px;
+}
+#about .about-article p {
   color: #4b4b4b;
   letter-spacing: 1px;
 }
-#about p img {
-  float: left;
-  transform: rotate(45deg);
-  margin: 0 20px 20px 0;
-  width: 30%;
+@media screen and (min-width: 768px) {
+  #about .about-article {
+    display: initial;
+  }
+  #about .about-article #dna {
+    float: left;
+    shape-outside: circle(50%);
+    margin: 2rem;
+    width: 250px;
+  }
 }
-#about .circle-about {
-  padding: 20%;
-  padding: 10%;
-  background: #00D4FF;
-  background-image: linear-gradient(45deg, #0055FF, 20%, #00D4FF);
-  border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+#about .skills-container {
+  width: 100vw;
+  background: linear-gradient(45deg, #0055FF, 20%, #00D4FF);
+}
+#about .skills-container .container {
+  margin: auto;
+  padding: 25px;
+}
+#about .skills-container .container h3 {
+  display: inline-block;
+  margin: auto;
+  color: #fafafa;
+}
+#about .skills-container .container img {
+  width: 50px;
 }
 
 /*# sourceMappingURL=index.scss.map */
