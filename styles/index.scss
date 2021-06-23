@@ -172,29 +172,99 @@ header {
         // }
     }
 
-    .skills-container{
-        width: 100vw;
-        background: linear-gradient(45deg, $dark-blue, 20%, $light-blue);
+    
+}
 
-        .container{
-            margin: auto;
-            padding: 25px;
 
-            h3{
-                display: inline-block;
-                margin: auto;
-                color: $not-so-white;
-            }
+// Skills
+
+.skills{
+    position: relative;
+    padding: 100px 0;
+    width: 100%;
+    max-width: 1920px;
+    background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
+    z-index: 1;
+    overflow: hidden;
+
+    .container{
+        margin: auto;
+        padding: 35px 25px;
+        text-align: center;
+
+        h3{
+            color: $not-so-white;
+        }
+
+        .icon-list{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            min-height: 150px;
 
             & img {
                 width: 50px;
+                height: 50px;
+                margin: 20px 20px;
+            }
+
+            img:nth-child(2n){
+                align-self: flex-end;
             }
         }
-
-        
     }
 
-    
+    // &::before{
+    //     content: "";
+    //     position: absolute;
+    //     background: inherit;
+    //     z-index: -1;
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     left: 0;
+    //     transform-origin: top left;
+    //     transform: skewY(-3deg);
+    // }
+
+    // &::after{
+    //     content: "";
+    //     position: absolute;
+    //     background: inherit;
+    //     z-index: -1;
+    //     width: 100%;
+    //     height: 100%;
+    //     top: 0;
+    //     left: 0;
+    //     transform-origin: bottom right;
+    //     transform: skewY(-3deg);
+    // }
+
+    &::before{
+        content: "";
+        position: absolute;
+        background: $not-so-white;
+        z-index: -1;
+        height: 50%;
+        top: -50%;
+        left: 0;
+        right: 0;
+        transform-origin: bottom right;
+        transform: skewY(-3deg);
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        background: $not-so-white;
+        z-index: -1;
+        height: 50%;
+        bottom: -50%;
+        left: 0;
+        right: 0;
+        transform-origin: top left;
+        transform: skewY(-3deg);
+    }
 }
 
 /*# sourceMappingURL=index.scss.map */
