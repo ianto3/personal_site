@@ -24,6 +24,7 @@ h1{
 h2{
     font-size: 44px;
     letter-spacing: 3px;
+    color: $not-so-black
 }
 
 h3{
@@ -131,7 +132,6 @@ header {
         // -webkit-text-fill-color: transparent; 
         // -moz-background-clip: text;
         // -moz-text-fill-color: transparent;
-        color: $not-so-black;
     }
 
     .about-article{
@@ -264,6 +264,72 @@ header {
         right: 0;
         transform-origin: top left;
         transform: skewY(-3deg);
+    }
+}
+
+
+// Projects
+
+#projects{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .project-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0;
+        padding: 25px;
+
+        @media screen and (min-width: $lg){
+            flex-direction: row;
+            text-align: justify;
+
+            &:nth-of-type(2n+1){
+                .project-image-container{
+                    margin-right: 30px;
+                }
+            }
+
+            &:nth-of-type(2n){
+                .project-image-container{
+                    order: 2;
+                    margin-left: 30px;
+                }
+            }
+        }
+
+        .project-image-container{
+            margin-bottom: 25px;
+
+            img{
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            @media screen and (min-width: $sm){
+                // margin-bottom: 0;
+                padding: 80px;
+                background: linear-gradient(45deg, $dark-blue, 30%, $light-blue);
+
+                &.project-image-container1{
+                    border-radius: 50% 70% 50% 70% / 60% 50% 70% 60%;
+                }
+                &.project-image-container2{
+                    border-radius: 39% 61% 64% 36% / 42% 49% 51% 58%;
+                }
+                &.project-image-container3{
+                    border-radius: 38% 62% 34% 66% / 50% 40% 60% 50%;
+                }
+
+                img{
+                    width: 350px;
+                    opacity: 90%;
+                } 
+            }
+        }
     }
 }
 

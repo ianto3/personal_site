@@ -19,6 +19,7 @@ h1 {
 h2 {
   font-size: 44px;
   letter-spacing: 3px;
+  color: #4b4b4b;
 }
 
 h3 {
@@ -101,7 +102,6 @@ header .header-title .position-title {
 #about h2 {
   margin: 40px 0;
   display: inline-block;
-  color: #4b4b4b;
 }
 #about .about-article {
   display: flex;
@@ -183,6 +183,59 @@ header .header-title .position-title {
   right: 0;
   transform-origin: top left;
   transform: skewY(-3deg);
+}
+
+#projects {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#projects .project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+  padding: 25px;
+}
+@media screen and (min-width: 992px) {
+  #projects .project-container {
+    flex-direction: row;
+    text-align: justify;
+  }
+  #projects .project-container:nth-of-type(2n+1) .project-image-container {
+    margin-right: 30px;
+  }
+  #projects .project-container:nth-of-type(2n) .project-image-container {
+    order: 2;
+    margin-left: 30px;
+  }
+}
+#projects .project-container .project-image-container {
+  margin-bottom: 25px;
+}
+#projects .project-container .project-image-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+@media screen and (min-width: 576px) {
+  #projects .project-container .project-image-container {
+    padding: 80px;
+    background: linear-gradient(45deg, #0055FF, 30%, #00D4FF);
+  }
+  #projects .project-container .project-image-container.project-image-container1 {
+    border-radius: 50% 70% 50% 70%/60% 50% 70% 60%;
+  }
+  #projects .project-container .project-image-container.project-image-container2 {
+    border-radius: 39% 61% 64% 36%/42% 49% 51% 58%;
+  }
+  #projects .project-container .project-image-container.project-image-container3 {
+    border-radius: 38% 62% 34% 66%/50% 40% 60% 50%;
+  }
+  #projects .project-container .project-image-container img {
+    width: 350px;
+    opacity: 90%;
+  }
 }
 
 /*# sourceMappingURL=index.scss.map */
