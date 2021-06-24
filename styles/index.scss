@@ -23,6 +23,7 @@ h1{
 
 h2{
     font-size: 44px;
+    margin: 40px 0;
     letter-spacing: 3px;
     color: $not-so-black
 }
@@ -35,6 +36,12 @@ h3{
 p{
     font-size: 22px;
     line-height: 1.5;
+    color:$not-so-black;
+    letter-spacing: 1px;
+    &::first-letter{
+        font-size: 25px;
+        color: $nav-bg;
+    }
 }
 
 .container{
@@ -45,40 +52,129 @@ p{
 // Nav
 
 nav {
-    padding: 25px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    background-color: transparent;
+    transition: all .4s linear;
 
-    a{
-        position: relative;
-        color: $not-so-white;
-        text-decoration: none;
-        font-size: 24px;
-        font-weight: 600;
-
-        &::after{
-            position: absolute;
-            content: "";
-            bottom: -5px;
-            left: 0%;
-            height: 2px;
-            background-color: $not-so-white;
-            border-radius: 5px;
-            width: 0%;
-            transition: all 0.2s ease-in-out;
-            
-        }
-
-        &:hover{
-            &::after{
-                width: 100%;
-            }
-        }
+    &.scrolled{
+        transition: all .4s linear;
+        background-color: $nav-bg;
     }
 
-    ul > a {
-        margin-left: 15px;
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a{
+            position: relative;
+            color: $not-so-white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+    
+            &::after{
+                position: absolute;
+                content: "";
+                bottom: -5px;
+                left: 0%;
+                height: 2px;
+                background-color: $not-so-white;
+                border-radius: 5px;
+                width: 0%;
+                transition: all 0.2s ease-in-out;
+                
+            }
+    
+            &:hover{
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+    
+        .nav-menu{
+            position: absolute;
+            left: -100%;
+            top: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            opacity: 0;
+            background-color: $nav-bg;
+            transition: all 0.3s ease-in-out;
+    
+            .nav-link:nth-of-type(n+2) {
+                margin-top: 25px;
+            }
+    
+            &.active{
+                left: 0;
+                opacity: 1;
+            }
+        }
+    
+        #hamburger{
+            display: block;
+            position: relative;
+            cursor: pointer;
+            padding: 5px;
+            background-color: transparent;
+    
+            .bar{
+                display: block;
+                width: 30px;
+                height: 2px;
+                margin: 5px auto;
+                background-color: $not-so-white;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &.active{
+                .bar:nth-of-type(1){
+                    transform: translateY(7px) rotate(45deg);
+                }
+
+                .bar:nth-of-type(2){
+                    opacity: 0;
+                }
+
+                .bar:nth-of-type(3){
+                    transform: translateY(-7px) rotate(-45deg);
+                }
+            }
+        }
+    
+        @media screen and (min-width: $md){
+            .nav-menu{
+                position: initial;
+                display: initial;
+                padding: 0;
+                opacity: 1;
+                width: auto;
+                background-color: transparent;
+        
+                .nav-link {
+                    margin-left: 15px;
+                }
+
+                .nav-link:nth-of-type(n+2) {
+                    margin-top: 0;
+                }
+            }
+
+            #hamburger{
+                display: none;
+            }
+        }
     }
 }
 
@@ -87,6 +183,7 @@ nav {
 header {
     height: 500px;
     min-height: 500px;
+    padding-top: 80px; // Gives space to nav
     background-image:url("../assets/header-wave.svg");
     background-repeat: no-repeat;
     background-position-y: top;
@@ -123,15 +220,7 @@ header {
     }
 
     h2{
-        margin: 40px 0;
         display: inline-block;
-        // background-color: #0085dd; // fallback
-        // background-image: linear-gradient(45deg, $dark-blue, 20%, $light-blue);
-        // background-size: 100%;
-        // -webkit-background-clip: text;
-        // -webkit-text-fill-color: transparent; 
-        // -moz-background-clip: text;
-        // -moz-text-fill-color: transparent;
     }
 
     .about-article{
@@ -143,11 +232,16 @@ header {
             transform: rotate(45deg);
             margin: 0 20px 20px 0;
             width: 150px;
-        }
+            animation: rotation 75s infinite linear;
 
-        p{
-            color:$not-so-black;
-            letter-spacing: 1px;
+            @keyframes rotation {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(359deg);
+                }
+            }
         }
 
         @media screen and (min-width: $md) {
@@ -160,19 +254,7 @@ header {
                 width: 250px;
             }
         }
-
-        // @media screen and (min-width: $lg){
-        //     display: flex;
-        //     flex-direction: row;
-
-        //     img{
-        //         float: none;
-        //     }
-
-        // }
     }
-
-    
 }
 
 
@@ -186,6 +268,29 @@ header {
     background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
     z-index: 1;
     overflow: hidden;
+
+    background: linear-gradient(229deg, #00d5ff, #0055ff);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:20% 80%}
+        50%{background-position:80% 20%}
+        100%{background-position:20% 80%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:20% 80%}
+        50%{background-position:80% 20%}
+        100%{background-position:20% 80%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:20% 80%}
+        50%{background-position:80% 20%}
+        100%{background-position:20% 80%}
+    }
 
     .container{
         margin: auto;
@@ -202,7 +307,7 @@ header {
             flex-wrap: wrap;
             min-height: 150px;
 
-            & img {
+            img{
                 width: 50px;
                 height: 50px;
                 margin: 20px 20px;
@@ -213,32 +318,6 @@ header {
             }
         }
     }
-
-    // &::before{
-    //     content: "";
-    //     position: absolute;
-    //     background: inherit;
-    //     z-index: -1;
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0;
-    //     left: 0;
-    //     transform-origin: top left;
-    //     transform: skewY(-3deg);
-    // }
-
-    // &::after{
-    //     content: "";
-    //     position: absolute;
-    //     background: inherit;
-    //     z-index: -1;
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0;
-    //     left: 0;
-    //     transform-origin: bottom right;
-    //     transform: skewY(-3deg);
-    // }
 
     &::before{
         content: "";
@@ -280,7 +359,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 50px 0;
+        margin: 30px 0;
         padding: 25px;
 
         @media screen and (min-width: $lg){
@@ -310,12 +389,16 @@ header {
             }
 
             @media screen and (min-width: $sm){
-                // margin-bottom: 0;
                 padding: 80px;
                 background: linear-gradient(45deg, $dark-blue, 30%, $light-blue);
-
+                // background-image: url("../assets/projects/weatherapp.PNG"), linear-gradient(45deg, $dark-blue, 30%, $light-blue);
+                // background-position: center;
+                // background-size: contain;
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+                
                 &.project-image-container1{
                     border-radius: 50% 70% 50% 70% / 60% 50% 70% 60%;
+                    border-radius: 15%;
                 }
                 &.project-image-container2{
                     border-radius: 39% 61% 64% 36% / 42% 49% 51% 58%;
@@ -326,8 +409,8 @@ header {
 
                 img{
                     width: 350px;
-                    opacity: 90%;
-                } 
+                    opacity: 85%;
+                }
             }
         }
     }

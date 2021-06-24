@@ -18,6 +18,7 @@ h1 {
 
 h2 {
   font-size: 44px;
+  margin: 40px 0;
   letter-spacing: 3px;
   color: #4b4b4b;
 }
@@ -30,6 +31,12 @@ h3 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  color: #4b4b4b;
+  letter-spacing: 1px;
+}
+p::first-letter {
+  font-size: 25px;
+  color: rgba(0, 162, 255, 0.95);
 }
 
 .container {
@@ -38,19 +45,32 @@ p {
 }
 
 nav {
-  padding: 25px 20px;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 20px;
+  background-color: transparent;
+  transition: all 0.4s linear;
+}
+nav.scrolled {
+  transition: all 0.4s linear;
+  background-color: rgba(0, 162, 255, 0.95);
+}
+nav .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav a {
+nav .nav-container a {
   position: relative;
   color: #fafafa;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
-nav a::after {
+nav .nav-container a::after {
   position: absolute;
   content: "";
   bottom: -5px;
@@ -61,16 +81,78 @@ nav a::after {
   width: 0%;
   transition: all 0.2s ease-in-out;
 }
-nav a:hover::after {
+nav .nav-container a:hover::after {
   width: 100%;
 }
-nav ul > a {
-  margin-left: 15px;
+nav .nav-container .nav-menu {
+  position: absolute;
+  left: -100%;
+  top: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  opacity: 0;
+  background-color: rgba(0, 162, 255, 0.95);
+  transition: all 0.3s ease-in-out;
+}
+nav .nav-container .nav-menu .nav-link:nth-of-type(n+2) {
+  margin-top: 25px;
+}
+nav .nav-container .nav-menu.active {
+  left: 0;
+  opacity: 1;
+}
+nav .nav-container #hamburger {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+  background-color: transparent;
+}
+nav .nav-container #hamburger .bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: #fafafa;
+  transition: all 0.3s ease-in-out;
+}
+nav .nav-container #hamburger.active .bar:nth-of-type(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+nav .nav-container #hamburger.active .bar:nth-of-type(2) {
+  opacity: 0;
+}
+nav .nav-container #hamburger.active .bar:nth-of-type(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media screen and (min-width: 768px) {
+  nav .nav-container .nav-menu {
+    position: initial;
+    display: initial;
+    padding: 0;
+    opacity: 1;
+    width: auto;
+    background-color: transparent;
+  }
+  nav .nav-container .nav-menu .nav-link {
+    margin-left: 15px;
+  }
+  nav .nav-container .nav-menu .nav-link:nth-of-type(n+2) {
+    margin-top: 0;
+  }
+  nav .nav-container #hamburger {
+    display: none;
+  }
 }
 
 header {
   height: 500px;
   min-height: 500px;
+  padding-top: 80px;
   background-image: url("../assets/header-wave.svg");
   background-repeat: no-repeat;
   background-position-y: top;
@@ -100,7 +182,6 @@ header .header-title .position-title {
   margin: 40px 0;
 }
 #about h2 {
-  margin: 40px 0;
   display: inline-block;
 }
 #about .about-article {
@@ -112,10 +193,15 @@ header .header-title .position-title {
   transform: rotate(45deg);
   margin: 0 20px 20px 0;
   width: 150px;
+  animation: rotation 75s infinite linear;
 }
-#about .about-article p {
-  color: #4b4b4b;
-  letter-spacing: 1px;
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 @media screen and (min-width: 768px) {
   #about .about-article {
@@ -134,9 +220,47 @@ header .header-title .position-title {
   padding: 100px 0;
   width: 100%;
   max-width: 1920px;
-  background: linear-gradient(45deg, #0055FF, 40%, #00D4FF);
+  background: linear-gradient(45deg, #0055ff, 40%, #00d5ff);
   z-index: 1;
   overflow: hidden;
+  background: linear-gradient(229deg, #00d5ff, #0055ff);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 20% 80%;
+  }
+  50% {
+    background-position: 80% 20%;
+  }
+  100% {
+    background-position: 20% 80%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 20% 80%;
+  }
+  50% {
+    background-position: 80% 20%;
+  }
+  100% {
+    background-position: 20% 80%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 20% 80%;
+  }
+  50% {
+    background-position: 80% 20%;
+  }
+  100% {
+    background-position: 20% 80%;
+  }
 }
 .skills .container {
   margin: auto;
@@ -195,7 +319,7 @@ header .header-title .position-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0;
+  margin: 30px 0;
   padding: 25px;
 }
 @media screen and (min-width: 992px) {
@@ -221,10 +345,12 @@ header .header-title .position-title {
 @media screen and (min-width: 576px) {
   #projects .project-container .project-image-container {
     padding: 80px;
-    background: linear-gradient(45deg, #0055FF, 30%, #00D4FF);
+    background: linear-gradient(45deg, #0055ff, 30%, #00d5ff);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   }
   #projects .project-container .project-image-container.project-image-container1 {
     border-radius: 50% 70% 50% 70%/60% 50% 70% 60%;
+    border-radius: 15%;
   }
   #projects .project-container .project-image-container.project-image-container2 {
     border-radius: 39% 61% 64% 36%/42% 49% 51% 58%;
@@ -234,7 +360,7 @@ header .header-title .position-title {
   }
   #projects .project-container .project-image-container img {
     width: 350px;
-    opacity: 90%;
+    opacity: 85%;
   }
 }
 
