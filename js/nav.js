@@ -1,26 +1,7 @@
-// Handle menu toggle
-
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector(".nav-menu");
-const navLinks = document.querySelectorAll(".nav-link");
+const navLinks = document.querySelectorAll("nav a");
 const nav = document.querySelector("nav");
-
-const handleMenuToggle = () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
-
-const handleOutsideNavClick = (ev) => {
-    if (!nav.contains(ev.target) && navMenu.classList.contains("active")) {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    }
-}
-
-hamburger.addEventListener("click", handleMenuToggle);
-navLinks.forEach(link => link.addEventListener("click", handleMenuToggle));
-document.addEventListener("click", handleOutsideNavClick);
-
 
 // Handle navbar background transparency
 
@@ -35,7 +16,7 @@ const debounce = (callback, delay) => {
 }
 
 const navTransparency = () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 0 || navMenu.classList.contains("active")) {
         nav.classList.add("scrolled");
     } else {
         nav.classList.remove("scrolled");
@@ -43,3 +24,28 @@ const navTransparency = () => {
 }
 
 window.addEventListener("scroll", debounce(navTransparency, 100));
+
+// Handle menu toggle
+
+const handleMenuToggle = () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    // if menu is expanded, remove transparencies
+    if (navMenu.classList.contains("active")) {
+        nav.classList.add("scrolled");
+    } else {
+        navTransparency();
+    }
+}
+
+const handleOutsideNavClick = (ev) => {
+    if (!nav.contains(ev.target) && navMenu.classList.contains("active")) {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        navTransparency();
+    }
+}
+
+hamburger.addEventListener("click", handleMenuToggle);
+navLinks.forEach(link => link.addEventListener("click", handleMenuToggle));
+document.addEventListener("click", handleOutsideNavClick);

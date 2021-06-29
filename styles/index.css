@@ -53,10 +53,10 @@ nav {
   right: 0;
   padding: 15px 20px;
   background-color: transparent;
-  transition: all 0.4s linear;
+  transition: all 0.2s ease-in;
 }
 nav.scrolled {
-  transition: all 0.4s linear;
+  transition: all 0.2s ease-in;
   background-color: rgba(0, 162, 255, 0.95);
 }
 nav .nav-container {
@@ -87,8 +87,8 @@ nav .nav-container a:hover::after {
 }
 nav .nav-container .nav-menu {
   position: absolute;
-  left: -100%;
-  top: 100%;
+  top: -100%;
+  left: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -103,7 +103,7 @@ nav .nav-container .nav-menu .nav-link:nth-of-type(n+2) {
   margin-top: 25px;
 }
 nav .nav-container .nav-menu.active {
-  left: 0;
+  top: 70px;
   opacity: 1;
 }
 nav .nav-container #hamburger {
@@ -154,11 +154,29 @@ header {
   height: 500px;
   min-height: 500px;
   padding-top: 80px;
-  background-image: url("../assets/header-wave.svg");
-  background-repeat: no-repeat;
-  background-position-y: top;
-  background-size: 100% 100%;
   color: #fafafa;
+  background: linear-gradient(45deg, #0055ff, 40%, #00d5ff);
+  overflow: hidden;
+  position: relative;
+}
+header::after {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background-image: url("../assets/wave_divider.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: 280% 100%;
+  transform: rotate(180deg);
+  filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.2));
+}
+@media screen and (min-width: 768px) {
+  header::after {
+    background-size: 150% 100%;
+  }
 }
 header .header-title {
   text-align: center;
@@ -311,7 +329,7 @@ header .header-title .position-title {
   #projects .project-container .project-image-container {
     padding: 80px;
     background: linear-gradient(45deg, #0055ff, 30%, #00d5ff);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
   }
   #projects .project-container .project-image-container.project-image-container1 {
     border-radius: 50% 70% 50% 70%/60% 50% 70% 60%;
@@ -346,11 +364,16 @@ header .header-title .position-title {
   left: 0;
   right: 0;
   height: 150px;
-  background-image: url("../assets/contact_wave.svg");
+  background-image: url("../assets/wave_divider.svg");
   background-repeat: no-repeat;
   background-position-y: bottom;
-  background-size: 100% 100%;
-  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.2));
+  background-size: 180% 100%;
+  filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.2));
+}
+@media screen and (min-width: 768px) {
+  #contact::after {
+    background-size: 100% 100%;
+  }
 }
 #contact .container {
   padding-top: 150px;
