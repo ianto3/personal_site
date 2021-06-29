@@ -416,7 +416,7 @@ header {
         left: 0;
         right: 0;
         height: 150px;
-        background-image: url("../assets/bottom_wave2.svg");
+        background-image: url("../assets/contact_wave.svg");
         background-repeat: no-repeat;
         background-position-y: bottom;
         background-size: 100% 100%;
@@ -492,9 +492,9 @@ header {
                     }
 
                     &:focus{
-                        // outline: 2px solid rgba($color: $not-so-black, $alpha: 0.6);
                         outline: none;
-                        
+                        // box-shadow has better compatibility with border-radius than outline
+                        box-shadow: 0px 0px 2px 5px rgba($color: $not-so-white, $alpha: 0.6);
                     }
     
                     &:focus, &:not(:placeholder-shown){
@@ -520,19 +520,37 @@ header {
             padding: 8px 0;
             border: none;
             color: $not-so-black;
+            border: 2px solid $not-so-white;
             border-radius: 25px;
-            background: $not-so-white linear-gradient(180deg, $not-so-white, 90%, rgba($color: $not-so-black, $alpha: 0.1));
+            background: $not-so-white linear-gradient(180deg, $not-so-white, 96%, rgba($color: $not-so-black, $alpha: 0.1));
             font-size: 20px;
             letter-spacing: 2px;
-            box-shadow: 0px 3px 10px rgba($color: $not-so-black, $alpha: 0.5);;
+            box-shadow: 0px 1px 10px rgba($color: $not-so-black, $alpha: 0.5);
 
             &:hover{
-                background: $not-so-white linear-gradient(180deg, $not-so-white, 85%, rgba($color: $not-so-black, $alpha: 0.1));
-                color: $not-so-black;
+                box-shadow: 0px 5px 5px rgba($color: $not-so-black, $alpha: 0.5);
+                animation: pulse 2s infinite;
+
+                @keyframes pulse {
+                    0% {
+                        transform: scale(0.95);
+                        box-shadow: 0 0 0 0 rgba(250, 250, 250, 0.7);
+                    }
+
+                    70% {
+                        transform: scale(1);
+                        box-shadow: 0 0 0 10px rgba(250, 250, 250, 0);
+                    }
+
+                    100% {
+                        transform: scale(0.95);
+                        box-shadow: 0 0 0 0 rgba(250, 250, 250, 0);
+                    }
+                }
             }
 
             &:active{
-                background: $not-so-white linear-gradient(180deg, rgba($color: $not-so-black, $alpha: 0.1), 10%, $not-so-white);
+                background: $not-so-white linear-gradient(180deg, rgba($color: $not-so-black, $alpha: 0.1), 1%, $not-so-white);
             }
 
             @media screen and (min-width: $md) {
