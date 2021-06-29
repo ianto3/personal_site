@@ -30,7 +30,7 @@ const debounce = (callback, delay) => {
         const next = () =>
             callback(...args);
         clearTimeout(timeout);
-        timeout = setTimeout(next, delay)
+        timeout = setTimeout(next, delay);
     }
 }
 
@@ -38,7 +38,7 @@ const navTransparency = () => {
     if (window.scrollY > 0) {
         nav.classList.add("scrolled");
     } else {
-        nav.classList.remove("scrolled")
+        nav.classList.remove("scrolled");
     }
 }
 

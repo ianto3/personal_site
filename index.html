@@ -31,6 +31,9 @@
             <span class="position-title">Jr Full Stack Developer</span>
         </div>
     </header>
+
+
+    <!-- About -->
     <section id="about" class="container">
         <!-- <img src="./assets/dna.svg" alt="DNA image" /> -->
         <h2>About Me</h2>
@@ -70,7 +73,10 @@
             </div>
         </div>
     </div>
-    <section id="projects">
+
+
+    <!-- Projects -->
+    <section id="projects" class="container">
         <h2>Projects</h2>
         <div class="project-container container">
             <div class="project-image-container project-image-container1">
@@ -98,6 +104,32 @@
                 provident officia dignissimos, ullam iste quasi exercitationem vel soluta vero. Laudantium repellat
                 mollitia alias nisi, aperiam at iusto ab atque magni nostrum cupiditate accusamus, necessitatibus
                 asperiores minima totam itaque earum fuga, aspernatur debitis fugit tempore ducimus?</p>
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="form" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/myylpywd"
+                method="post">
+                <div class="form-component">
+                    <input type="text" name="name" id="full-name" placeholder="Enter your name" required>
+                    <label for="full-name"><span class="label-name">Name</span></label>
+                </div>
+                <div class="form-component">
+                    <input type="email" name="_replyto" id="email-address" placeholder="Enter your email" required>
+                    <label for="email-address"><span class="label-name">Email Address</span></label>
+                </div>
+                <div class="form-component">
+                    <textarea rows="5" name="message" id="message" placeholder="What do you have in mind?"
+                        required></textarea>
+                    <label for="message"><span class="label-name">Message</span></label>
+                </div>
+                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                <button id="submit" type="submit" value="Submit">Submit</button>
+            </form>
         </div>
     </section>
 

@@ -6,9 +6,9 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
     box-sizing: border-box;
     font-size: 100%;
+	font: inherit;
     vertical-align: baseline;
 }
 
@@ -41,6 +41,7 @@ p{
     &::first-letter{
         font-size: 25px;
         color: $nav-bg;
+        text-shadow: 1px 1px 3px rgba($color: #000000, $alpha: 0.2);
     }
 }
 
@@ -269,29 +270,6 @@ header {
     z-index: 1;
     overflow: hidden;
 
-    background: linear-gradient(229deg, #00d5ff, #0055ff);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 10s ease infinite;
-    -moz-animation: AnimationName 10s ease infinite;
-    animation: AnimationName 10s ease infinite;
-
-    @-webkit-keyframes AnimationName {
-        0%{background-position:20% 80%}
-        50%{background-position:80% 20%}
-        100%{background-position:20% 80%}
-    }
-    @-moz-keyframes AnimationName {
-        0%{background-position:20% 80%}
-        50%{background-position:80% 20%}
-        100%{background-position:20% 80%}
-    }
-    @keyframes AnimationName {
-        0%{background-position:20% 80%}
-        50%{background-position:80% 20%}
-        100%{background-position:20% 80%}
-    }
-
     .container{
         margin: auto;
         padding: 35px 25px;
@@ -330,6 +308,7 @@ header {
         right: 0;
         transform-origin: bottom right;
         transform: skewY(-3deg);
+        box-shadow: 0px 10px 5px rgba($color: $not-so-black, $alpha: 0.2);
     }
 
     &::after{
@@ -343,6 +322,7 @@ header {
         right: 0;
         transform-origin: top left;
         transform: skewY(-3deg);
+        box-shadow: 0px -5px 5px rgba($color: $not-so-black, $alpha: 0.2);
     }
 }
 
@@ -411,6 +391,153 @@ header {
                     width: 350px;
                     opacity: 85%;
                 }
+            }
+        }
+    }
+}
+
+// Contact
+
+#contact{
+    position: relative;
+    margin-top: 150px;
+    background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
+    overflow: hidden;
+
+    h2{
+        color: $not-so-white;
+        margin-bottom: 100px;
+    }
+
+    &::after{
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background-image: url("../assets/bottom_wave2.svg");
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        background-size: 100% 100%;
+        filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.2));
+    }
+
+    .container{
+        padding-top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #form{
+            display: grid;
+            grid-template-columns: 1fr;
+            column-gap: 25px;
+            row-gap: 60px;
+            justify-content: center;
+            justify-items: center;
+            width: 75%;
+    
+            @media screen and (min-width: $md) {
+                grid-template-columns: 1fr 1fr;
+
+                // textarea input
+                .form-component:nth-last-of-type(1){
+                    grid-column: span 2;
+                }
+            }
+    
+            .form-component{
+                position: relative;
+                width: 100%;
+    
+                label{
+                    position: absolute;
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    inset: 0;
+                    bottom: -5px;
+                    font-size: 20px;
+                    color: transparent;
+                    pointer-events: none;
+    
+                    .label-name{
+                        position: absolute;
+                        top: -10px;
+                        left: 0;
+                        transition: all .3s ease-in-out;
+                    }
+                }
+    
+                input, textarea{
+                    display: block;
+                    padding: 10px 15px;
+                    width: 100%;
+                    background-color: $not-so-white;
+                    border: 0;
+                    font-size: 16px;
+                    color: $not-so-black;
+                    box-shadow: 0px 3px 10px rgba($color: $not-so-black, $alpha: 0.5);
+                    border-radius: 25px;
+
+                    @media screen and (min-width: $sm){
+                        font-size: 22px;
+                    }
+
+                    &::placeholder{
+                        color: $not-so-black;
+                    }
+
+                    &:focus{
+                        // outline: 2px solid rgba($color: $not-so-black, $alpha: 0.6);
+                        outline: none;
+                        
+                    }
+    
+                    &:focus, &:not(:placeholder-shown){
+    
+                        + label .label-name {
+                            font-weight: 600;
+                            color: $not-so-white;
+                            text-shadow: 2px 2px 5px rgba($color: $not-so-black, $alpha: 0.5);
+                            transform: translateX(15px) translateY(-20px);
+                        }
+                    }
+                }
+            }
+        }
+
+        textarea{
+            resize: vertical;
+        }
+    
+        #submit{
+            width: 100%;
+            margin-bottom: 50px;
+            padding: 8px 0;
+            border: none;
+            color: $not-so-black;
+            border-radius: 25px;
+            background: $not-so-white linear-gradient(180deg, $not-so-white, 90%, rgba($color: $not-so-black, $alpha: 0.1));
+            font-size: 20px;
+            letter-spacing: 2px;
+            box-shadow: 0px 3px 10px rgba($color: $not-so-black, $alpha: 0.5);;
+
+            &:hover{
+                background: $not-so-white linear-gradient(180deg, $not-so-white, 85%, rgba($color: $not-so-black, $alpha: 0.1));
+                color: $not-so-black;
+            }
+
+            &:active{
+                background: $not-so-white linear-gradient(180deg, rgba($color: $not-so-black, $alpha: 0.1), 10%, $not-so-white);
+            }
+
+            @media screen and (min-width: $md) {
+                grid-column: span 2;
+                width: 50%;
             }
         }
     }
