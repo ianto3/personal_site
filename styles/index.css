@@ -2,46 +2,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: #fafafa;
+  font-size: 1.6rem;
 }
 
 h1 {
-  font-size: 64px;
-  letter-spacing: 8px;
+  font-size: 6.4rem;
+  letter-spacing: 0.8rem;
 }
 
 h2 {
-  font-size: 44px;
-  margin: 40px 0;
-  letter-spacing: 3px;
+  font-size: 4.4rem;
+  margin: 4rem 0;
+  letter-spacing: 0.3rem;
   color: #4b4b4b;
 }
 
 h3 {
-  font-size: 35px;
-  letter-spacing: 2px;
+  font-size: 3.5rem;
+  letter-spacing: 0.2rem;
 }
 
 p {
-  font-size: 22px;
+  font-size: 2.2rem;
   line-height: 1.5;
   color: #4b4b4b;
-  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
 }
 p::first-letter {
-  font-size: 25px;
+  font-size: 2.5rem;
   color: rgba(0, 162, 255, 0.95);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
@@ -51,7 +55,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  padding: 15px 20px;
+  padding: 1.5rem 2rem;
   background-color: transparent;
   transition: all 0.2s ease-in;
 }
@@ -68,15 +72,15 @@ nav .nav-container a {
   position: relative;
   color: #fafafa;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
 }
 nav .nav-container a::after {
   position: absolute;
   content: "";
-  bottom: -5px;
+  bottom: -0.5rem;
   left: 0%;
-  height: 2px;
+  height: 0.2rem;
   background-color: #fafafa;
   border-radius: 5px;
   width: 0%;
@@ -94,43 +98,43 @@ nav .nav-container .nav-menu {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 25px;
+  padding: 2.5rem;
   opacity: 0;
   background-color: rgba(0, 162, 255, 0.95);
   transition: all 0.3s ease-in-out;
 }
 nav .nav-container .nav-menu .nav-link:nth-of-type(n+2) {
-  margin-top: 25px;
+  margin-top: 2.5rem;
 }
 nav .nav-container .nav-menu.active {
-  top: 70px;
+  top: 6.9rem;
   opacity: 1;
 }
 nav .nav-container #hamburger {
   display: block;
   position: relative;
   cursor: pointer;
-  padding: 5px;
+  padding: 0.5rem;
   background-color: transparent;
 }
 nav .nav-container #hamburger .bar {
   display: block;
-  width: 30px;
-  height: 2px;
-  margin: 5px auto;
+  width: 3rem;
+  height: 0.2rem;
+  margin: 0.5rem auto;
   background-color: #fafafa;
   transition: all 0.3s ease-in-out;
 }
 nav .nav-container #hamburger.active .bar:nth-of-type(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(0.7rem) rotate(45deg);
 }
 nav .nav-container #hamburger.active .bar:nth-of-type(2) {
   opacity: 0;
 }
 nav .nav-container #hamburger.active .bar:nth-of-type(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-0.7rem) rotate(-45deg);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   nav .nav-container .nav-menu {
     position: initial;
     display: initial;
@@ -140,7 +144,7 @@ nav .nav-container #hamburger.active .bar:nth-of-type(3) {
     background-color: transparent;
   }
   nav .nav-container .nav-menu .nav-link {
-    margin-left: 15px;
+    margin-left: 1.5rem;
   }
   nav .nav-container .nav-menu .nav-link:nth-of-type(n+2) {
     margin-top: 0;
@@ -151,9 +155,9 @@ nav .nav-container #hamburger.active .bar:nth-of-type(3) {
 }
 
 header {
-  height: 500px;
-  min-height: 500px;
-  padding-top: 80px;
+  height: 50rem;
+  min-height: 50rem;
+  padding-top: 8rem;
   color: #fafafa;
   background: linear-gradient(45deg, #0055ff, 40%, #00d5ff);
   overflow: hidden;
@@ -162,10 +166,10 @@ header {
 header::after {
   position: absolute;
   content: "";
-  bottom: 0px;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 15rem;
   background-image: url("../assets/wave_divider.svg");
   background-repeat: no-repeat;
   background-position-y: bottom;
@@ -173,7 +177,7 @@ header::after {
   transform: rotate(180deg);
   filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.2));
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   header::after {
     background-size: 150% 100%;
   }
@@ -186,19 +190,19 @@ header .header-title h1 {
   line-height: 1.5;
 }
 header .header-title .position-title {
-  font-size: 30px;
-  letter-spacing: 3px;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
 }
 
 #about {
-  padding: 25px;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: justify;
 }
 #about * {
-  margin: 40px 0;
+  margin: 4rem 0;
 }
 #about h2 {
   display: inline-block;
@@ -210,8 +214,8 @@ header .header-title .position-title {
 }
 #about .about-article #dna {
   transform: rotate(45deg);
-  margin: 0 20px 20px 0;
-  width: 150px;
+  margin: 0 2rem 0;
+  width: 15rem;
   animation: rotation 75s infinite linear;
 }
 @keyframes rotation {
@@ -222,7 +226,7 @@ header .header-title .position-title {
     transform: rotate(359deg);
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   #about .about-article {
     display: initial;
   }
@@ -230,22 +234,22 @@ header .header-title .position-title {
     float: left;
     shape-outside: circle(50%);
     margin: 2rem;
-    width: 250px;
+    width: 25rem;
   }
 }
 
 .skills {
   position: relative;
-  padding: 100px 0;
+  padding: 10rem 0;
   width: 100%;
-  max-width: 1920px;
+  max-width: 192rem;
   background: linear-gradient(45deg, #0055ff, 40%, #00d5ff);
   z-index: 1;
   overflow: hidden;
 }
 .skills .container {
   margin: auto;
-  padding: 35px 25px;
+  padding: 3.5rem 2.5rem;
   text-align: center;
 }
 .skills .container h3 {
@@ -255,12 +259,12 @@ header .header-title .position-title {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  min-height: 150px;
+  min-height: 15rem;
 }
 .skills .container .icon-list img {
-  width: 50px;
-  height: 50px;
-  margin: 20px 20px;
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem;
 }
 .skills .container .icon-list img:nth-child(2n) {
   align-self: flex-end;
@@ -293,7 +297,7 @@ header .header-title .position-title {
 }
 
 #projects {
-  padding-top: 100px;
+  padding-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,32 +306,32 @@ header .header-title .position-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px 0;
-  padding: 25px;
+  margin: 3rem 0;
+  padding: 2.5rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 62em) {
   #projects .project-container {
     flex-direction: row;
     text-align: justify;
   }
   #projects .project-container:nth-of-type(2n+1) .project-image-container {
-    margin-right: 30px;
+    margin-right: 3rem;
   }
   #projects .project-container:nth-of-type(2n) .project-image-container {
     order: 2;
-    margin-left: 30px;
+    margin-left: 3rem;
   }
 }
 #projects .project-container .project-image-container {
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
 }
 #projects .project-container .project-image-container img {
   width: 100%;
   border-radius: 10px;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 36em) {
   #projects .project-container .project-image-container {
-    padding: 80px;
+    padding: 8rem;
     background: linear-gradient(45deg, #0055ff, 30%, #00d5ff);
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
   }
@@ -342,41 +346,41 @@ header .header-title .position-title {
     border-radius: 38% 62% 34% 66%/50% 40% 60% 50%;
   }
   #projects .project-container .project-image-container img {
-    width: 350px;
+    width: 35rem;
     opacity: 85%;
   }
 }
 
 #contact {
   position: relative;
-  margin-top: 150px;
+  margin-top: 15rem;
   background: linear-gradient(45deg, #0055ff, 40%, #00d5ff);
   overflow: hidden;
 }
 #contact h2 {
   color: #fafafa;
-  margin-bottom: 100px;
+  margin-bottom: 10rem;
 }
 #contact::after {
   position: absolute;
   content: "";
-  top: 0px;
+  top: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 15rem;
   background-image: url("../assets/wave_divider.svg");
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-size: 180% 100%;
   filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.2));
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   #contact::after {
     background-size: 100% 100%;
   }
 }
 #contact .container {
-  padding-top: 150px;
+  padding-top: 15rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -384,13 +388,13 @@ header .header-title .position-title {
 #contact .container #form {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 25px;
-  row-gap: 60px;
+  column-gap: 2.5rem;
+  row-gap: 6rem;
   justify-content: center;
   justify-items: center;
   width: 75%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   #contact .container #form {
     grid-template-columns: 1fr 1fr;
   }
@@ -408,31 +412,31 @@ header .header-title .position-title {
   justify-content: space-between;
   align-items: center;
   inset: 0;
-  bottom: -5px;
-  font-size: 20px;
+  bottom: -0.5rem;
+  font-size: 2rem;
   color: transparent;
   pointer-events: none;
 }
 #contact .container #form .form-component label .label-name {
   position: absolute;
-  top: -10px;
+  top: -1rem;
   left: 0;
   transition: all 0.3s ease-in-out;
 }
 #contact .container #form .form-component input, #contact .container #form .form-component textarea {
   display: block;
-  padding: 10px 15px;
+  padding: 1rem 1.5rem;
   width: 100%;
   background-color: #fafafa;
   border: 0;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #4b4b4b;
   box-shadow: 0px 3px 10px rgba(75, 75, 75, 0.5);
   border-radius: 25px;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 36em) {
   #contact .container #form .form-component input, #contact .container #form .form-component textarea {
-    font-size: 22px;
+    font-size: 2.2rem;
   }
 }
 #contact .container #form .form-component input::placeholder, #contact .container #form .form-component textarea::placeholder {
@@ -446,22 +450,22 @@ header .header-title .position-title {
   font-weight: 600;
   color: #fafafa;
   text-shadow: 2px 2px 5px rgba(75, 75, 75, 0.5);
-  transform: translateX(15px) translateY(-20px);
+  transform: translateX(1.5rem) translateY(-2rem);
 }
 #contact .container textarea {
   resize: vertical;
 }
 #contact .container #submit {
   width: 100%;
-  margin-bottom: 50px;
-  padding: 8px 0;
+  margin-bottom: 5rem;
+  padding: 0.8rem 0;
   border: none;
   color: #4b4b4b;
-  border: 2px solid #fafafa;
+  border: 0.2rem solid #fafafa;
   border-radius: 25px;
   background: #fafafa linear-gradient(180deg, #fafafa, 96%, rgba(75, 75, 75, 0.1));
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
   box-shadow: 0px 1px 10px rgba(75, 75, 75, 0.5);
 }
 #contact .container #submit:hover {
@@ -485,7 +489,7 @@ header .header-title .position-title {
 #contact .container #submit:active {
   background: #fafafa linear-gradient(180deg, rgba(75, 75, 75, 0.1), 1%, #fafafa);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   #contact .container #submit {
     grid-column: span 2;
     width: 50%;

@@ -7,10 +7,10 @@ $dark-blue: #0055ff;
 $light-blue: #00d5ff;
 $nav-bg: rgba(0, 162, 255, 0.95);
 
-// bBreakpoints
+// Breakpoints (em respective to 100% font-size, 16px)
 
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
-$xxl: 1400px;
+$sm: 36em;      // 576px
+$md: 48em;      // 768px
+$lg: 62em;      // 992px
+$xl: 75em;    // 1200px
+$xxl: 87.5em;   // 1400px

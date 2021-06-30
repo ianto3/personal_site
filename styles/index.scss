@@ -7,46 +7,50 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 100%;
 	font: inherit;
     vertical-align: baseline;
 }
 
+html{
+    font-size: 62.5%; // 1rem = 10px
+}
+
 body{
     background-color: $not-so-white;
+    font-size: 1.6rem; // default size back to 16px
 }
 
 h1{
-    font-size: 64px;
-    letter-spacing: 8px;
+    font-size: 6.4rem;
+    letter-spacing: 0.8rem;
 }
 
 h2{
-    font-size: 44px;
-    margin: 40px 0;
-    letter-spacing: 3px;
+    font-size: 4.4rem;
+    margin: 4rem 0;
+    letter-spacing: 0.3rem;
     color: $not-so-black
 }
 
 h3{
-    font-size: 35px;
-    letter-spacing: 2px;
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
 }
 
 p{
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 1.5;
     color:$not-so-black;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
     &::first-letter{
-        font-size: 25px;
+        font-size: 2.5rem;
         color: $nav-bg;
         text-shadow: 1px 1px 3px rgba($color: #000000, $alpha: 0.2);
     }
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -58,7 +62,7 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    padding: 15px 20px;
+    padding: 1.5rem 2rem;
     background-color: transparent;
     transition: all 0.2s ease-in;
 
@@ -76,15 +80,15 @@ nav {
             position: relative;
             color: $not-so-white;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 2rem;
             font-weight: 600;
     
             &::after{
                 position: absolute;
                 content: "";
-                bottom: -5px;
+                bottom: -0.5rem;
                 left: 0%;
-                height: 2px;
+                height: 0.2rem;
                 background-color: $not-so-white;
                 border-radius: 5px;
                 width: 0%;
@@ -101,8 +105,6 @@ nav {
     
         .nav-menu{
             position: absolute;
-            // left: -100%;
-            // top: 100%;
             top: -100%;
             left: 0;
             width: 100%;
@@ -110,17 +112,17 @@ nav {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 25px;
+            padding: 2.5rem;
             opacity: 0;
             background-color: $nav-bg;
             transition: all 0.3s ease-in-out;
     
             .nav-link:nth-of-type(n+2) {
-                margin-top: 25px;
+                margin-top: 2.5rem;
             }
     
             &.active{
-                top: 70px;
+                top: 6.9rem;
                 opacity: 1;
             }
         }
@@ -129,21 +131,21 @@ nav {
             display: block;
             position: relative;
             cursor: pointer;
-            padding: 5px;
+            padding: 0.5rem;
             background-color: transparent;
     
             .bar{
                 display: block;
-                width: 30px;
-                height: 2px;
-                margin: 5px auto;
+                width: 3rem;
+                height: 0.2rem;
+                margin: 0.5rem auto;
                 background-color: $not-so-white;
                 transition: all 0.3s ease-in-out;
             }
 
             &.active{
                 .bar:nth-of-type(1){
-                    transform: translateY(7px) rotate(45deg);
+                    transform: translateY(0.7rem) rotate(45deg);
                 }
 
                 .bar:nth-of-type(2){
@@ -151,7 +153,7 @@ nav {
                 }
 
                 .bar:nth-of-type(3){
-                    transform: translateY(-7px) rotate(-45deg);
+                    transform: translateY(-0.7rem) rotate(-45deg);
                 }
             }
         }
@@ -166,7 +168,7 @@ nav {
                 background-color: transparent;
         
                 .nav-link {
-                    margin-left: 15px;
+                    margin-left: 1.5rem;
                 }
 
                 .nav-link:nth-of-type(n+2) {
@@ -184,9 +186,9 @@ nav {
 // Header
 
 header {
-    height: 500px;
-    min-height: 500px;
-    padding-top: 80px; // Gives space to nav
+    height: 50rem;
+    min-height: 50rem;
+    padding-top: 8rem; // Gives space to nav
     color: $not-so-white;
 
     background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
@@ -196,10 +198,10 @@ header {
     &::after{
         position: absolute;
         content: "";
-        bottom: 0px;
+        bottom: 0;
         left: 0;
         right: 0;
-        height: 150px;
+        height: 15rem;
         background-image: url("../assets/wave_divider.svg");
         background-repeat: no-repeat;
         background-position-y: bottom;
@@ -221,8 +223,8 @@ header {
         }
     
         .position-title{
-            font-size: 30px;
-            letter-spacing: 3px;
+            font-size: 3rem;
+            letter-spacing: 0.3rem;
         }
     }
     
@@ -231,14 +233,14 @@ header {
 // About Me
 
 #about{
-    padding: 25px;
+    padding: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: justify;
 
     & *{
-        margin: 40px 0;
+        margin: 4rem 0;
     }
 
     h2{
@@ -252,8 +254,8 @@ header {
 
         #dna {
             transform: rotate(45deg);
-            margin: 0 20px 20px 0;
-            width: 150px;
+            margin: 0 2rem 0;
+            width: 15rem;
             animation: rotation 75s infinite linear;
 
             @keyframes rotation {
@@ -273,7 +275,7 @@ header {
                 float: left;
                 shape-outside: circle(50%);
                 margin: 2rem;
-                width: 250px;
+                width: 25rem;
             }
         }
     }
@@ -284,16 +286,16 @@ header {
 
 .skills{
     position: relative;
-    padding: 100px 0;
+    padding: 10rem 0;
     width: 100%;
-    max-width: 1920px;
+    max-width: 192rem;
     background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
     z-index: 1;
     overflow: hidden;
 
     .container{
         margin: auto;
-        padding: 35px 25px;
+        padding: 3.5rem 2.5rem;
         text-align: center;
 
         h3{
@@ -304,12 +306,12 @@ header {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            min-height: 150px;
+            min-height: 15rem;
 
             img{
-                width: 50px;
-                height: 50px;
-                margin: 20px 20px;
+                width: 5rem;
+                height: 5rem;
+                margin: 2rem;
             }
 
             img:nth-child(2n){
@@ -351,7 +353,7 @@ header {
 // Projects
 
 #projects{
-    padding-top: 100px;
+    padding-top: 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -360,8 +362,8 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 30px 0;
-        padding: 25px;
+        margin: 3rem 0;
+        padding: 2.5rem;
 
         @media screen and (min-width: $lg){
             flex-direction: row;
@@ -369,20 +371,20 @@ header {
 
             &:nth-of-type(2n+1){
                 .project-image-container{
-                    margin-right: 30px;
+                    margin-right: 3rem;
                 }
             }
 
             &:nth-of-type(2n){
                 .project-image-container{
                     order: 2;
-                    margin-left: 30px;
+                    margin-left: 3rem;
                 }
             }
         }
 
         .project-image-container{
-            margin-bottom: 25px;
+            margin-bottom: 2.5rem;
 
             img{
                 width: 100%;
@@ -390,7 +392,7 @@ header {
             }
 
             @media screen and (min-width: $sm){
-                padding: 80px;
+                padding: 8rem;
                 background: linear-gradient(45deg, $dark-blue, 30%, $light-blue);
                 // background-image: url("../assets/projects/weatherapp.PNG"), linear-gradient(45deg, $dark-blue, 30%, $light-blue);
                 // background-position: center;
@@ -409,7 +411,7 @@ header {
                 }
 
                 img{
-                    width: 350px;
+                    width: 35rem;
                     opacity: 85%;
                 }
             }
@@ -421,22 +423,22 @@ header {
 
 #contact{
     position: relative;
-    margin-top: 150px;
+    margin-top: 15rem;
     background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
     overflow: hidden;
 
     h2{
         color: $not-so-white;
-        margin-bottom: 100px;
+        margin-bottom: 10rem;
     }
 
     &::after{
         position: absolute;
         content: "";
-        top: 0px;
+        top: 0;
         left: 0;
         right: 0;
-        height: 150px;
+        height: 15rem;
         background-image: url("../assets/wave_divider.svg");
         background-repeat: no-repeat;
         background-position-y: bottom;
@@ -449,7 +451,7 @@ header {
     }
 
     .container{
-        padding-top: 150px;
+        padding-top: 15rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -457,8 +459,8 @@ header {
         #form{
             display: grid;
             grid-template-columns: 1fr;
-            column-gap: 25px;
-            row-gap: 60px;
+            column-gap: 2.5rem;
+            row-gap: 6rem;
             justify-content: center;
             justify-items: center;
             width: 75%;
@@ -484,14 +486,14 @@ header {
                     align-items: center;
 
                     inset: 0;
-                    bottom: -5px;
-                    font-size: 20px;
+                    bottom: -0.5rem;
+                    font-size: 2rem;
                     color: transparent;
                     pointer-events: none;
     
                     .label-name{
                         position: absolute;
-                        top: -10px;
+                        top: -1rem;
                         left: 0;
                         transition: all .3s ease-in-out;
                     }
@@ -499,17 +501,17 @@ header {
     
                 input, textarea{
                     display: block;
-                    padding: 10px 15px;
+                    padding: 1rem 1.5rem;
                     width: 100%;
                     background-color: $not-so-white;
                     border: 0;
-                    font-size: 16px;
+                    font-size: 1.6rem;
                     color: $not-so-black;
                     box-shadow: 0px 3px 10px rgba($color: $not-so-black, $alpha: 0.5);
                     border-radius: 25px;
 
                     @media screen and (min-width: $sm){
-                        font-size: 22px;
+                        font-size: 2.2rem;
                     }
 
                     &::placeholder{
@@ -528,7 +530,7 @@ header {
                             font-weight: 600;
                             color: $not-so-white;
                             text-shadow: 2px 2px 5px rgba($color: $not-so-black, $alpha: 0.5);
-                            transform: translateX(15px) translateY(-20px);
+                            transform: translateX(1.5rem) translateY(-2rem);
                         }
                     }
                 }
@@ -541,15 +543,15 @@ header {
     
         #submit{
             width: 100%;
-            margin-bottom: 50px;
-            padding: 8px 0;
+            margin-bottom: 5rem;
+            padding: 0.8rem 0;
             border: none;
             color: $not-so-black;
-            border: 2px solid $not-so-white;
+            border: 0.2rem solid $not-so-white;
             border-radius: 25px;
             background: $not-so-white linear-gradient(180deg, $not-so-white, 96%, rgba($color: $not-so-black, $alpha: 0.1));
-            font-size: 20px;
-            letter-spacing: 2px;
+            font-size: 2rem;
+            letter-spacing: 0.2rem;
             box-shadow: 0px 1px 10px rgba($color: $not-so-black, $alpha: 0.5);
 
             &:hover{
