@@ -186,19 +186,18 @@ nav {
 // Header
 
 header {
+    position: relative;
     height: 50rem;
     min-height: 50rem;
     padding-top: 8rem; // Gives space to nav
     color: $not-so-white;
-
     background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
     overflow: hidden;
-    position: relative;
 
     &::after{
         position: absolute;
         content: "";
-        bottom: 0;
+        bottom: -0.2rem;
         left: 0;
         right: 0;
         height: 15rem;
@@ -218,7 +217,7 @@ header {
         text-align: center;
 
         h1 {
-            margin-top: 5%;
+            margin-top: 5rem;
             line-height: 1.5;
         }
     
@@ -286,12 +285,35 @@ header {
 
 .skills{
     position: relative;
-    padding: 10rem 0;
     width: 100%;
-    max-width: 192rem;
     background: linear-gradient(45deg, $dark-blue, 40%, $light-blue);
     z-index: 1;
     overflow: hidden;
+
+    .skew-divider{
+        height: 15rem;
+        width: 100%;
+        background-image: url("../assets/skew_divider.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        // Top skewed divider
+        &:nth-of-type(1){
+            background-position-y: top;
+            // translateY helps avoid gaps while zooming
+            transform: scaleX(-1) translateY(-0.2rem);
+            filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        // Bottom skewed divider
+        &:nth-last-of-type(1){
+            background-position-y: bottom;
+            transform: rotate(180deg) scaleX(-1) translateY(-0.2rem);
+            filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        
+    }
 
     .container{
         margin: auto;
@@ -320,33 +342,33 @@ header {
         }
     }
 
-    &::before{
-        content: "";
-        position: absolute;
-        background: $not-so-white;
-        z-index: -1;
-        height: 50%;
-        top: -50%;
-        left: 0;
-        right: 0;
-        transform-origin: bottom right;
-        transform: skewY(-3deg);
-        box-shadow: 0px 10px 5px rgba($color: $not-so-black, $alpha: 0.2);
-    }
+    // &::before{
+    //     content: "";
+    //     position: absolute;
+    //     background: $not-so-white;
+    //     z-index: -1;
+    //     height: 50%;
+    //     top: -50%;
+    //     left: 0;
+    //     right: 0;
+    //     transform-origin: bottom right;
+    //     transform: skewY(-3deg);
+    //     box-shadow: 0px 10px 5px rgba($color: $not-so-black, $alpha: 0.2);
+    // }
 
-    &::after{
-        content: "";
-        position: absolute;
-        background: $not-so-white;
-        z-index: -1;
-        height: 50%;
-        bottom: -50%;
-        left: 0;
-        right: 0;
-        transform-origin: top left;
-        transform: skewY(-3deg);
-        box-shadow: 0px -5px 5px rgba($color: $not-so-black, $alpha: 0.2);
-    }
+    // &::after{
+    //     content: "";
+    //     position: absolute;
+    //     background: $not-so-white;
+    //     z-index: -1;
+    //     height: 50%;
+    //     bottom: -50%;
+    //     left: 0;
+    //     right: 0;
+    //     transform-origin: top left;
+    //     transform: skewY(-3deg);
+    //     box-shadow: 0px -5px 5px rgba($color: $not-so-black, $alpha: 0.2);
+    // }
 }
 
 
