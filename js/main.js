@@ -44,7 +44,9 @@ const handleOutsideNavClick = (ev) => {
     if (!nav.contains(ev.target) && navMenu.classList.contains("active")) {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
-        navTransparency();
+        if (window.scrollY === 0) {
+            nav.classList.remove("opaque");
+        }
     }
 }
 
