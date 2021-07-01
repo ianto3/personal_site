@@ -59,7 +59,7 @@ nav {
   background-color: transparent;
   transition: all 0.2s ease-in;
 }
-nav.scrolled {
+nav.opaque {
   transition: all 0.2s ease-in;
   background-color: rgba(0, 162, 255, 0.95);
 }
@@ -290,6 +290,7 @@ header .header-title .position-title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 #projects .project-container {
   display: flex;
@@ -340,7 +341,7 @@ header .header-title .position-title {
   letter-spacing: 0.2rem;
   border: 1px solid rgba(0, 162, 255, 0.9);
   border-radius: 25px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 #projects .project-container .demo-link-wrapper {
   text-align: center;
@@ -378,6 +379,19 @@ header .header-title .position-title {
 #projects .project-container .demo-link-wrapper .demo-link:hover:active {
   background-color: rgba(0, 162, 255, 0.9);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+#projects .project-container:nth-of-type(2n+1) {
+  opacity: 0;
+  transform: translateX(75%);
+}
+#projects .project-container:nth-of-type(2n) {
+  opacity: 0;
+  transform: translateX(-75%);
+}
+#projects .project-container.show {
+  transition: all 1s ease-in-out;
+  opacity: 1;
+  transform: translateX(0);
 }
 @media screen and (min-width: 62em) {
   #projects .project-container {
