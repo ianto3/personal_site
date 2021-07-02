@@ -77,3 +77,7 @@ const projectObserverCallback = (entries, observer) => {
 const projectObserver = new IntersectionObserver(projectObserverCallback, projectObserverOptions);
 
 projects.forEach(project => projectObserver.observe(project));
+
+// By default projects are shown in case user doesn't enable js
+// If js runs, remove show class to enable slide-in effects
+projects.forEach(project => project.classList.remove("show"));
