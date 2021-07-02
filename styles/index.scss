@@ -20,23 +20,34 @@ body{
     position: relative; // Allows positioning of footer
     background-color: $not-so-white;
     font-size: 1.6rem; // Default size back to 16px
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1{
-    font-size: 6.4rem;
+    font-size: 7rem;
     letter-spacing: 0.8rem;
+    font-family: 'Croissant One', sans-serif;
+    font-weight: 800;
 }
 
 h2{
     font-size: 4.4rem;
     margin: 4rem 0;
     letter-spacing: 0.3rem;
-    color: $not-so-black
+    color: $not-so-black;
+    font-weight: 600;
 }
 
 h3{
     font-size: 3.5rem;
     letter-spacing: 0.2rem;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    color: $not-so-black
 }
 
 p{
@@ -83,7 +94,7 @@ nav {
             color: $not-so-white;
             text-decoration: none;
             font-size: 2rem;
-            font-weight: 600;
+            font-weight: 500;
     
             @include hoverUnderline;
         }
@@ -209,6 +220,7 @@ header {
         .position-title{
             font-size: 3rem;
             letter-spacing: 0.3rem;
+            font-weight: 500;
         }
     }
     
@@ -343,16 +355,33 @@ header {
         margin: 3rem 0;
         padding: 2.5rem;
 
+        h4{
+            display: inline-block;
+            position: relative;
+            margin-bottom: 3rem;
+
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: -0.4rem;
+                left: 0;
+                right: 0;
+                height: 0.4rem;
+                background-color: rgba($color: $nav-bg, $alpha: 0.6);
+                border-radius: 25px;
+            }
+        }
+
         .project-image-container{
-            margin-bottom: 2.5rem;
+            margin-bottom: 7rem;
 
             img{
-                width: 100%;
+                width: 80%;
                 border-radius: 10px;
             }
 
             @media screen and (min-width: $sm){
-                padding: 8rem;
+                padding: 7rem;
                 background: linear-gradient(45deg, $dark-blue, 30%, $light-blue);
                 box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
                 
@@ -463,7 +492,7 @@ header {
 
             &:nth-of-type(2n+1){
                 .project-image-container{
-                    margin-right: 3rem;
+                    margin-right: 5rem;
                 }
 
                 .project-tech{
@@ -478,7 +507,7 @@ header {
             &:nth-of-type(2n){
                 .project-image-container{
                     order: 2;
-                    margin-left: 3rem;
+                    margin-left: 5rem;
                 }
 
                 .project-tech{

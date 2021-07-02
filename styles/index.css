@@ -15,11 +15,14 @@ body {
   position: relative;
   background-color: #fafafa;
   font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
-  font-size: 6.4rem;
+  font-size: 7rem;
   letter-spacing: 0.8rem;
+  font-family: "Croissant One", sans-serif;
+  font-weight: 800;
 }
 
 h2 {
@@ -27,11 +30,19 @@ h2 {
   margin: 4rem 0;
   letter-spacing: 0.3rem;
   color: #4b4b4b;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 3.5rem;
   letter-spacing: 0.2rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  color: #4b4b4b;
 }
 
 p {
@@ -75,7 +86,7 @@ nav .nav-container a {
   color: #fafafa;
   text-decoration: none;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 nav .nav-container a::after {
   position: absolute;
@@ -194,6 +205,7 @@ header .header-title h1 {
 header .header-title .position-title {
   font-size: 3rem;
   letter-spacing: 0.3rem;
+  font-weight: 500;
 }
 
 #about {
@@ -301,16 +313,31 @@ header .header-title .position-title {
   margin: 3rem 0;
   padding: 2.5rem;
 }
+#projects .project-container h4 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 3rem;
+}
+#projects .project-container h4::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  right: 0;
+  height: 0.4rem;
+  background-color: rgba(0, 162, 255, 0.6);
+  border-radius: 25px;
+}
 #projects .project-container .project-image-container {
-  margin-bottom: 2.5rem;
+  margin-bottom: 7rem;
 }
 #projects .project-container .project-image-container img {
-  width: 100%;
+  width: 80%;
   border-radius: 10px;
 }
 @media screen and (min-width: 36em) {
   #projects .project-container .project-image-container {
-    padding: 8rem;
+    padding: 7rem;
     background: linear-gradient(45deg, #0055ff, 30%, #00d5ff);
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
   }
@@ -402,7 +429,7 @@ header .header-title .position-title {
     margin: 5rem 0;
   }
   #projects .project-container:nth-of-type(2n+1) .project-image-container {
-    margin-right: 3rem;
+    margin-right: 5rem;
   }
   #projects .project-container:nth-of-type(2n+1) .project-tech {
     justify-content: flex-end;
@@ -412,7 +439,7 @@ header .header-title .position-title {
   }
   #projects .project-container:nth-of-type(2n) .project-image-container {
     order: 2;
-    margin-left: 3rem;
+    margin-left: 5rem;
   }
   #projects .project-container:nth-of-type(2n) .project-tech {
     justify-content: flex-start;
