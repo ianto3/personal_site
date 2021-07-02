@@ -17,8 +17,9 @@ html{
 }
 
 body{
+    position: relative; // Allows positioning of footer
     background-color: $not-so-white;
-    font-size: 1.6rem; // default size back to 16px
+    font-size: 1.6rem; // Default size back to 16px
 }
 
 h1{
@@ -84,24 +85,7 @@ nav {
             font-size: 2rem;
             font-weight: 600;
     
-            &::after{
-                position: absolute;
-                content: "";
-                bottom: -0.5rem;
-                left: 0%;
-                height: 0.2rem;
-                background-color: $not-so-white;
-                border-radius: 5px;
-                width: 0%;
-                transition: all 0.2s ease-in-out;
-                
-            }
-    
-            &:hover{
-                &::after{
-                    width: 100%;
-                }
-            }
+            @include hoverUnderline;
         }
     
         .nav-menu{
@@ -542,6 +526,7 @@ header {
 
     .container{
         padding-top: 15rem;
+        padding-bottom: 10rem; // Space for footer
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -582,6 +567,7 @@ header {
                     pointer-events: none;
     
                     .label-name{
+                        opacity: 0;
                         position: absolute;
                         top: -1rem;
                         left: 0;
@@ -617,6 +603,7 @@ header {
                     &:focus, &:not(:placeholder-shown){
     
                         + label .label-name {
+                            opacity: 1;
                             font-weight: 600;
                             color: $not-so-white;
                             text-shadow: 2px 2px 5px rgba($color: $not-so-black, $alpha: 0.5);
@@ -645,6 +632,7 @@ header {
             box-shadow: 0px 1px 10px rgba($color: $not-so-black, $alpha: 0.5);
 
             &:hover{
+                cursor: pointer;
                 box-shadow: 0px 5px 5px rgba($color: $not-so-black, $alpha: 0.5);
                 animation: whitepulse 2s infinite;
 
@@ -674,6 +662,54 @@ header {
                 grid-column: span 2;
                 width: 50%;
             }
+        }
+    }
+}
+
+footer{
+    position: absolute; // Use background gradient from contact's section
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+    // background-color: rgba($color: $nav-bg, $alpha: 0.5);
+    color: $not-so-white;
+    font-size: 1.5rem;
+    // font-weight: 600;
+    letter-spacing: 0.1rem;
+
+    @media screen and (min-width: $sm){
+        font-size: 1.8rem;
+    }
+
+    > div {
+        margin: 1rem 0;    
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+
+        a{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:nth-of-type(2n){
+                margin-left: 1rem;
+            }
+
+            img{
+                height: 3.6rem;
+                filter: invert(100%) sepia(85%) saturate(0%) hue-rotate(158deg) brightness(111%) contrast(96%);
+            }
+
+            @include hoverUnderline;
         }
     }
 }
