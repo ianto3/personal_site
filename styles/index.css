@@ -19,34 +19,55 @@ body {
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 4rem;
   letter-spacing: 0.8rem;
   font-family: "Croissant One", sans-serif;
   font-weight: 800;
 }
+@media screen and (min-width: 36em) {
+  h1 {
+    font-size: 7rem;
+  }
+}
 
 h2 {
-  font-size: 4.4rem;
+  font-size: 3rem;
   margin: 4rem 0;
   letter-spacing: 0.3rem;
   color: #4b4b4b;
   font-weight: 600;
+  text-align: center;
+}
+@media screen and (min-width: 36em) {
+  h2 {
+    font-size: 4.4rem;
+  }
 }
 
 h3 {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   letter-spacing: 0.2rem;
   font-weight: 500;
 }
+@media screen and (min-width: 36em) {
+  h3 {
+    font-size: 3.5rem;
+  }
+}
 
 h4 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.1rem;
   color: #4b4b4b;
 }
+@media screen and (min-width: 36em) {
+  h4 {
+    font-size: 3rem;
+  }
+}
 
 p {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   line-height: 1.5;
   color: #4b4b4b;
   letter-spacing: 0.1rem;
@@ -120,7 +141,7 @@ nav .nav-container .nav-menu .nav-link:nth-of-type(n+2) {
   margin-top: 2.5rem;
 }
 nav .nav-container .nav-menu.active {
-  top: 6.9rem;
+  top: 100%;
   opacity: 1;
 }
 nav .nav-container #hamburger {
@@ -129,6 +150,7 @@ nav .nav-container #hamburger {
   cursor: pointer;
   padding: 0.5rem;
   background-color: transparent;
+  border: none;
 }
 nav .nav-container #hamburger .bar {
   display: block;
@@ -240,6 +262,10 @@ header .header-title .position-title {
     transform: rotate(359deg);
   }
 }
+#about .about-article #coding {
+  margin: 0 2rem 0;
+  width: 15rem;
+}
 @media screen and (min-width: 48em) {
   #about .about-article {
     display: initial;
@@ -247,8 +273,14 @@ header .header-title .position-title {
   #about .about-article #dna {
     float: left;
     shape-outside: circle(50%);
-    margin: 2rem;
+    margin: 2rem 2rem 2rem 0;
     width: 25rem;
+  }
+  #about .about-article #coding {
+    float: right;
+    shape-outside: circle(50%);
+    margin: 2rem 0 2rem 2rem;
+    width: 20rem;
   }
 }
 
@@ -310,7 +342,7 @@ header .header-title .position-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 3rem 0;
+  margin: 5rem 0;
   padding: 2.5rem;
 }
 #projects .project-container h4 {
@@ -328,10 +360,39 @@ header .header-title .position-title {
   background-color: rgba(0, 162, 255, 0.6);
   border-radius: 25px;
 }
+#projects .project-container .project-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+#projects .project-container .project-title h4 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  margin-right: 3rem;
+}
+#projects .project-container .project-title h4::after {
+  content: "";
+  position: absolute;
+  bottom: -0.4rem;
+  left: 0;
+  right: 0;
+  height: 0.4rem;
+  background-color: rgba(0, 162, 255, 0.6);
+  border-radius: 25px;
+}
+#projects .project-container .project-title .github-link img {
+  opacity: 0.8;
+  display: block;
+  height: 2.8rem;
+  filter: invert(0%) sepia(11%) saturate(2987%) hue-rotate(123deg) brightness(108%) contrast(60%);
+}
 #projects .project-container .project-image-container {
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 #projects .project-container .project-image-container img {
+  display: block;
+  margin: 0 auto;
   width: 80%;
   border-radius: 10px;
 }
@@ -350,6 +411,9 @@ header .header-title .position-title {
   #projects .project-container .project-image-container.project-image-container3 {
     border-radius: 38% 62% 34% 66%/50% 40% 60% 50%;
   }
+  #projects .project-container .project-image-container.project-image-container4 {
+    border-radius: 39% 61% 64% 36%/42% 49% 51% 58%;
+  }
   #projects .project-container .project-image-container img {
     width: 35rem;
     opacity: 85%;
@@ -366,26 +430,38 @@ header .header-title .position-title {
   margin: 0.6rem 0.6rem;
   padding: 0.4rem 0.8rem;
   color: rgba(0, 162, 255, 0.9);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
+  font-weight: 500;
   letter-spacing: 0.2rem;
   border: 1px solid rgba(0, 162, 255, 0.9);
   border-radius: 25px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 36em) {
+  #projects .project-container .project-tech .tech-tag {
+    font-size: 1.6rem;
+  }
 }
 #projects .project-container .demo-link-wrapper {
   text-align: center;
 }
 #projects .project-container .demo-link-wrapper .demo-link {
   display: inline-block;
-  padding: 0.4rem 1rem;
+  padding: 0.8rem 1.2rem;
   text-decoration: none;
   background-color: rgba(0, 162, 255, 0.7);
   color: #fafafa;
   border: 1px solid rgba(0, 162, 255, 0.7);
   border-radius: 25px;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   letter-spacing: 0.2rem;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 36em) {
+  #projects .project-container .demo-link-wrapper .demo-link {
+    font-size: 1.8rem;
+  }
 }
 #projects .project-container .demo-link-wrapper .demo-link:hover {
   background-color: rgba(0, 162, 255, 0.8);
@@ -426,7 +502,6 @@ header .header-title .position-title {
   #projects .project-container {
     flex-direction: row;
     text-align: justify;
-    margin: 5rem 0;
   }
   #projects .project-container:nth-of-type(2n+1) .project-image-container {
     margin-right: 5rem;
@@ -536,7 +611,7 @@ header .header-title .position-title {
 }
 @media screen and (min-width: 36em) {
   #contact .container #form .form-component input, #contact .container #form .form-component textarea {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 #contact .container #form .form-component input::placeholder, #contact .container #form .form-component textarea::placeholder {
@@ -566,6 +641,7 @@ header .header-title .position-title {
   border-radius: 25px;
   background: #fafafa linear-gradient(180deg, #fafafa, 96%, rgba(75, 75, 75, 0.1));
   font-size: 2rem;
+  font-weight: 500;
   letter-spacing: 0.2rem;
   box-shadow: 0px 1px 10px rgba(75, 75, 75, 0.5);
 }
@@ -610,7 +686,9 @@ footer {
   padding: 2rem;
   color: #fafafa;
   font-size: 1.5rem;
+  font-weight: 600;
   letter-spacing: 0.1rem;
+  text-align: center;
 }
 @media screen and (min-width: 36em) {
   footer {
