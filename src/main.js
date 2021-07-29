@@ -29,9 +29,14 @@ headerObserver.observe(header);
 
 // Handle menu toggle
 
-const handleMenuToggle = () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+const handleMenuToggle = (ev) => {
+    if (ev.target.className === "site-logo") {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    } else {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
     // if menu is expanded, remove transparencies
     if (navMenu.classList.contains("active")) {
         nav.classList.add("opaque");
@@ -61,7 +66,7 @@ const projects = document.querySelectorAll(".project-container");
 
 const projectObserverOptions = {
     root: null,
-    rootMargin: "-45% 0%",
+    rootMargin: "-20% 0%",
     threshold: 0
 }
 

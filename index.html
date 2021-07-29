@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/dna_favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Montserrat:wght@400;500;600&display=swap"
@@ -14,22 +15,26 @@
 </head>
 
 <body>
+
+    <!-- Nav -->
+    <nav class="opaque">
+        <div class="nav-container container">
+            <a class="site-logo" href="#">Ivan</a>
+            <ul class="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </ul>
+            <button id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
     <header>
-        <nav class="opaque">
-            <div class="nav-container container">
-                <a href=#>Ivan</a>
-                <ul class="nav-menu">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </ul>
-                <button id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
-        </nav>
         <div class="header-title">
             <h1>Ivan Ansari</h1>
             <span class="position-title">Jr Front-End Developer</span>
@@ -41,32 +46,38 @@
     <section id="about" class="container">
         <h2>About Me</h2>
         <article class="about-article">
-            <img id="dna" src="./assets/dna.svg" alt="DNA image" />
-            <p>Hi, my name is Ivan Ansari, i was born in Madrid, raised in Minnesota and ended up coming back to Spain
+            <img id="dna" src="./assets/dna.svg" alt="DNA" />
+            <p>
+                Hi, my name is Ivan Ansari, i was born in Madrid, raised in Minnesota and ended up coming back to Spain
                 (my mother really missed the weather back here). I have quite an inquisitive mind and i really love
-                learning new things from all kinds of fields! I ended up studying biology and due to my passion in tech
-                in general but more specifically computers, i ended up getting a master's in bioinformatics which i
-                saw as an interesting mix and a way to get introduced into coding and using this skillset to
-                mostly study genomes and try to obtain new information from huge chunks of data.
+                learning new things from all kinds of fields! I ended up studying biology and due to my passion for
+                tech i ended up getting a master's in bioinformatics which i
+                saw as an interesting mix and a way to get introduced into coding while using this skillset to study
+                genomes and try to obtain useful information from huge chunks of data.
             </p>
             <p>
-                Through the next few years i've been mostly working in the field of bioinformatics in a reasearch team
+                Through the next few years i've been working in the field of bioinformatics in a reasearch team
                 from the University of Valencia and the Foundation for the Promotion of Health and Biomedical Research
                 of the Valencian Region (FISABIO). During this lapse of time i've been using mostly Python, Bash and R
                 mixed
-                with a few other bioinformatic tools to offer bioinformatic support to the group and later on as a
-                project, develop a web application using R Shiny to datamine public health records and scan for possible
+                with a few other bioinformatic software. Using these tools I offered bioinformatic support to the group
+                and later on, worked
+                on a project developing a web application using R Shiny to datamine public health records and scan for
+                possible
                 outbreaks occurring for a certain microorganism and geographical area applying statistical
-                methodologies, obtaining a possible application of automated surveillance of outbreaks and a tool for
+                methodologies, obtaining a possible application for automated outbreak surveillance and a tool for
                 researchers.
             </p>
-            <img id="coding" src="./assets/programming.svg" alt="DNA image" />
+            <img id="coding" src="./assets/programming.svg" alt="Computer" />
             <p>
-                During my time as a bioinformatician, my passion for coding grew and i decided to try and refocus my
+                During my time as a bioinformatician, my passion for coding grew and i decided to try and shift my
                 career towards web development, starting out a brand new adventure learning through online courses
-                (among those courses i've completed Colt Steele's "The Web Developer Bootcamp 2021" based on the MERN
-                stack) and documentation while building up my own projects.
+                (mostly centered around the MERN stack) and documentation while building up my own projects.
             </p>
+            <div class="resume-wrapper">
+                <a class="resume-download" href="assets/resume/ivan_ansari_eng.pdf" download>Interested in my
+                    resume?</a>
+            </div>
         </article>
     </section>
 
@@ -105,7 +116,7 @@
             <div class="project-info">
                 <div class="project-title">
                     <h4>Formula Now</h4>
-                    <a href="https://github.com/ianto3/formula_app" class="github-link">
+                    <a href="https://github.com/ianto3/formula_app" class="github-link" target="_blank">
                         <img src="./assets/icons/github.svg" alt="GitHub link">
                     </a>
                 </div>
@@ -129,7 +140,7 @@
                     <span class="tech-tag">Wikipedia API</span>
                 </div>
                 <div class="demo-link-wrapper">
-                    <a href="https://formula-now.netlify.app/" class="demo-link">Live Demo</a>
+                    <a href="https://formulanow.ivanansari.com/" class="demo-link" target="_blank">Live Demo</a>
                 </div>
             </div>
         </div>
@@ -142,7 +153,7 @@
             <div class="project-info">
                 <div class="project-title">
                     <h4>Bookworm e-commerce site</h4>
-                    <a href="https://github.com/ianto3/bookworm" class="github-link">
+                    <a href="https://github.com/ianto3/bookworm" class="github-link" target="_blank">
                         <img src="./assets/icons/github.svg" alt="GitHub link">
                     </a>
                 </div>
@@ -166,7 +177,7 @@
                     <span class="tech-tag">jsonwebtoken</span>
                 </div>
                 <div class="demo-link-wrapper">
-                    <a href="https://bookwormshop.herokuapp.com/" class="demo-link">Live Demo</a>
+                    <a href="https://bookwormshop.herokuapp.com/" class="demo-link" target="_blank">Live Demo</a>
                 </div>
             </div>
         </div>
@@ -179,7 +190,7 @@
             <div class="project-info">
                 <div class="project-title">
                     <h4>Pomodoro Timer</h4>
-                    <a href="https://github.com/ianto3/pomodoro" class="github-link">
+                    <a href="https://github.com/ianto3/pomodoro" class="github-link" target="_blank">
                         <img src="./assets/icons/github.svg" alt="GitHub link">
                     </a>
                 </div>
@@ -192,7 +203,7 @@
                     <span class="tech-tag">React</span>
                 </div>
                 <div class="demo-link-wrapper">
-                    <a href="https://ianto3.github.io/pomodoro/" class="demo-link">Live Demo</a>
+                    <a href="https://ianto3.github.io/pomodoro/" class="demo-link" target="_blank">Live Demo</a>
                 </div>
             </div>
         </div>
@@ -205,7 +216,7 @@
             <div class="project-info">
                 <div class="project-title">
                     <h4>Weather App</h4>
-                    <a href="https://github.com/ianto3/WeatherApp" class="github-link">
+                    <a href="https://github.com/ianto3/WeatherApp" class="github-link" target="_blank">
                         <img src="./assets/icons/github.svg" alt="GitHub link">
                     </a>
                 </div>
@@ -221,7 +232,7 @@
                     <span class="tech-tag">Mapbox</span>
                 </div>
                 <div class="demo-link-wrapper">
-                    <a href="https://fierce-atoll-26297.herokuapp.com/" class="demo-link">Live Demo</a>
+                    <a href="https://fierce-atoll-26297.herokuapp.com/" class="demo-link" target="_blank">Live Demo</a>
                 </div>
             </div>
         </div>

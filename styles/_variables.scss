@@ -18,22 +18,29 @@ $xxl: 87.5em;   // 1400px
 // Mixins
 
 @mixin hoverUnderline {
-    &::after{
-        position: absolute;
-        content: "";
-        bottom: -0.5rem;
-        left: 0%;
-        height: 0.2rem;
-        background-color: $not-so-white;
-        border-radius: 5px;
-        width: 0%;
-        transition: all 0.2s ease-in-out;
+    @media (hover: hover){
         
-    }
-
-    &:hover{
+        // If the browser supports proper/true/real/non-emulated hovering (e.g. has a mouse-like primary input device),
+        // then apply these styles. Ignores in mobile devices.
+        
         &::after{
-            width: 100%;
+            position: absolute;
+            content: "";
+            bottom: -0.5rem;
+            left: 0%;
+            height: 0.2rem;
+            background-color: $not-so-white;
+            border-radius: 5px;
+            width: 0%;
+            transition: all 0.2s ease-in-out;
+            
+        }
+    
+        &:hover{
+            &::after{
+                width: 100%;
+            }
         }
     }
+    
 }
