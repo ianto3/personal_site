@@ -369,7 +369,7 @@ header .header-title .position-title {
   display: inline-block;
   padding: 1.5rem 1.8rem;
   text-decoration: none;
-  background-color: rgba(0, 162, 255, 0.7);
+  background-color: rgba(0, 162, 255, 0.8);
   color: #fafafa;
   border-radius: 25px;
   font-size: 1.8rem;
@@ -982,7 +982,7 @@ footer {
 footer > div {
   margin: 1rem 0;
 }
-footer ul {
+footer .footer-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -990,7 +990,7 @@ footer ul {
       -ms-flex-align: center;
           align-items: center;
 }
-footer ul a {
+footer .footer-links a {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1002,16 +1002,16 @@ footer ul a {
       -ms-flex-pack: center;
           justify-content: center;
 }
-footer ul a:nth-of-type(2n) {
+footer .footer-links a:nth-of-type(2n) {
   margin-left: 1rem;
 }
-footer ul a img {
+footer .footer-links a img {
   height: 3.6rem;
   -webkit-filter: invert(100%) sepia(85%) saturate(0%) hue-rotate(158deg) brightness(111%) contrast(96%);
           filter: invert(100%) sepia(85%) saturate(0%) hue-rotate(158deg) brightness(111%) contrast(96%);
 }
 @media (hover: hover) {
-  footer ul a::after {
+  footer .footer-links a::after {
     position: absolute;
     content: "";
     bottom: -0.5rem;
@@ -1024,7 +1024,7 @@ footer ul a img {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
   }
-  footer ul a:hover::after {
+  footer .footer-links a:hover::after {
     width: 100%;
   }
 }
