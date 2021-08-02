@@ -1,0 +1,42 @@
+{
+  "name": "personal_site",
+  "version": "1.0.0",
+  "description": "## Ivan Ansari's Personal Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianto3/personal_site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianto3/personal_site/issues"
+  },
+  "homepage": "https://github.com/ianto3/personal_site#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.9",
+    "autoprefixer": "^10.3.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "*",
+    "css-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "browserslist": [
+    ">0.5%",
+    "last 3 versions"
+  ]
+}
