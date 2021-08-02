@@ -33,6 +33,15 @@ module.exports = {
                 type: 'asset/resource'
             },
             {
+                // This image is used in meta tags for social media and need URL address.
+                // The URL is hard coded in the index.html for now so i need the filename to be unchanged instead of hashed.
+                test: /site_image_preview.png$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[name][ext]'
+                }
+            },
+            {
                 test: /\.pdf$/,
                 type: "asset/resource",
                 generator: {
